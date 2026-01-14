@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['mmbiz.qpic.cn', 'mmbiz.qlogo.cn'], // WeChat CDN domains for images
+    remotePatterns: [
+      { protocol: 'https', hostname: 'mmbiz.qpic.cn' },
+      { protocol: 'https', hostname: 'mmbiz.qlogo.cn' },
+    ], // WeChat CDN domains for images
   },
   async headers() {
     return [
